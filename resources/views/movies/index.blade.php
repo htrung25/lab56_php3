@@ -4,7 +4,7 @@
 <div class="mt-4">
     <div class="d-flex justify-content-between align-items-center mb-4">
         <h1 class="h3">Danh sách phim</h1>
-        <a href="{{ route('movies.create') }}" class="btn btn-primary btn-lg">
+        <a href="{{ route('admin.movies.create') }}" class="btn btn-primary btn-lg">
             Thêm phim mới
         </a>
     </div>
@@ -16,7 +16,7 @@
         </div>
     @endif
 
-    <form action="{{ route('movies.index') }}" method="GET" class="mb-4">
+    <form action="{{ route('admin.movies.index') }}" method="GET" class="mb-4">
         <div class="input-group input-group-lg shadow">
             <input type="text" 
                    name="q" 
@@ -28,7 +28,7 @@
                 Tìm kiếm
             </button>
             @if($search)
-                <a href="{{ route('movies.index') }}" class="btn btn-secondary">
+                <a href="{{ route('admin.movies.index') }}" class="btn btn-secondary">
                     Xóa bộ lọc
                 </a>
             @endif
@@ -40,7 +40,7 @@
         <div class="alert alert-info">
             Đang hiển thị kết quả cho: <strong>"{{ $search }}"</strong>
             (Tìm thấy {{ $movies->total() }} phim)
-            <a href="{{ route('movies.index') }}" class="float-end">Xem tất cả</a>
+            <a href="{{ route('admin.movies.index') }}" class="float-end">Xem tất cả</a>
         </div>
     @endif
 
@@ -78,9 +78,9 @@
                             <td><span class="badge bg-success">{{ $movie->genre->name }}</span></td>
                             <td>{{ $movie->release_date->format('d/m/Y') }}</td>
                             <td>
-                                <a href="{{ route('movies.show', $movie) }}" class="btn btn-info btn-sm">Xem</a>
-                                <a href="{{ route('movies.edit', $movie) }}" class="btn btn-warning btn-sm">Sửa</a>
-                                <form action="{{ route('movies.destroy', $movie) }}" method="POST" style="display:inline">
+                                <a href="{{ route('admin.movies.show', $movie) }}" class="btn btn-info btn-sm">Xem</a>
+                                <a href="{{ route('admin.movies.edit', $movie) }}" class="btn btn-warning btn-sm">Sửa</a>
+                                <form action="{{ route('admin.movies.destroy', $movie) }}" method="POST" style="display:inline">
                                     @csrf @method('DELETE')
                                     <button type="submit" class="btn btn-danger btn-sm" 
                                             onclick="return confirm('Xóa phim «{{ $movie->title }}»?')">Xóa</button>
@@ -91,7 +91,7 @@
                         <tr>
                             <td colspan="6" class="text-center text-muted py-5">
                                 <h4>Chưa có phim nào</h4>
-                                <a href="{{ route('movies.create') }}" class="btn btn-primary">Thêm phim đầu tiên</a>
+                                <a href="{{ route('admin.movies.create') }}" class="btn btn-primary">Thêm phim đầu tiên</a>
                             </td>
                         </tr>
                         @endforelse

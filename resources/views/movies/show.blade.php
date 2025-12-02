@@ -13,8 +13,8 @@
             <p><strong>Giới thiệu:</strong></p>
             <p>{{ $movie->intro }}</p>
             
-            <a href="{{ route('movies.edit', $movie) }}" class="btn btn-warning">Sửa</a>
-            <a href="{{ route('movies.index') }}" class="btn btn-secondary">Quay lại danh sách</a>
+            <a href="{{ route('admin.movies.edit', $movie) }}" class="btn btn-warning">Sửa</a>
+            <a href="{{ route('admin.movies.index') }}" class="btn btn-secondary">Quay lại danh sách</a>
         </div>
     </div>
 </div>

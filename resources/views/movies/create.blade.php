@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <h1>Thêm phim mới</h1>
 
-    <form action="{{ route('movies.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.movies.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
         <div class="mb-3">
@@ -43,7 +43,7 @@
         </div>
 
         <button type="submit" class="btn btn-success btn-lg">Thêm phim</button>
-        <a href="{{ route('movies.index') }}" class="btn btn-secondary btn-lg">Hủy</a>
+        <a href="{{ route('admin.movies.index') }}" class="btn btn-secondary btn-lg">Hủy</a>
     </form>
 </div>
 @endsection

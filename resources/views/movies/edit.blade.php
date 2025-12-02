@@ -4,7 +4,7 @@
 <div class="container mt-4">
     <h1>Sửa phim: {{ $movie->title }}</h1>
 
-    <form action="{{ route('movies.update', $movie) }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('admin.movies.update', $movie) }}" method="POST" enctype="multipart/form-data">
         @csrf @method('PUT')
 
         <!-- Giống create.blade.php, chỉ thay required thành optional cho poster nếu muốn -->
@@ -40,7 +40,7 @@
         </div>
 
         <button type="submit" class="btn btn-warning btn-lg">Cập nhật</button>
-        <a href="{{ route('movies.index') }}" class="btn btn-secondary btn-lg">Hủy</a>
+        <a href="{{ route('admin.movies.index') }}" class="btn btn-secondary btn-lg">Hủy</a>
     </form>
 </div>
 @endsection
